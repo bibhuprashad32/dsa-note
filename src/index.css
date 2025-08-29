@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* DSA Notebook Design System - Academic & Reader-First */
+
+@layer base {
+  :root {
+    /* Academic Color Palette - Warm & Scholarly */
+    --background: 28 15% 97%;
+    --foreground: 230 25% 18%;
+    --page-background: 28 25% 99%;
+    
+    /* Content Structure Colors */
+    --card: 28 25% 99%;
+    --card-foreground: 230 25% 18%;
+    --card-border: 28 20% 88%;
+    
+    /* Interactive Elements */
+    --primary: 215 85% 47%;
+    --primary-foreground: 0 0% 98%;
+    --primary-muted: 215 40% 92%;
+    
+    --secondary: 25 45% 85%;
+    --secondary-foreground: 25 25% 25%;
+    
+    /* Content Hierarchy */
+    --heading: 230 30% 12%;
+    --subheading: 230 20% 25%;
+    --body-text: 230 15% 30%;
+    --muted-text: 230 10% 50%;
+    
+    /* Structural Elements */
+    --border: 28 20% 88%;
+    --border-subtle: 28 15% 92%;
+    --divider: 28 25% 85%;
+    
+    /* Code & Technical */
+    --code-bg: 220 15% 96%;
+    --code-border: 220 20% 88%;
+    --syntax-keyword: 250 80% 55%;
+    --syntax-string: 120 50% 45%;
+    --syntax-comment: 0 0% 50%;
+    
+    /* Content Boxes */
+    --intuition-bg: 45 100% 96%;
+    --intuition-border: 45 60% 75%;
+    --approach-bg: 200 40% 96%;
+    --approach-border: 200 50% 80%;
+    --example-bg: 280 30% 96%;
+    --example-border: 280 40% 80%;
+    --complexity-bg: 15 60% 96%;
+    --complexity-border: 15 50% 80%;
+    --revision-bg: 120 30% 96%;
+    --revision-border: 120 40% 80%;
+    
+    /* Shadows & Effects */
+    --shadow-soft: 0 2px 8px hsl(230 15% 15% / 0.08);
+    --shadow-content: 0 4px 16px hsl(230 15% 15% / 0.12);
+    --shadow-elevated: 0 8px 32px hsl(230 15% 15% / 0.16);
+    
+    --radius: 0.75rem;
+    --radius-sm: 0.5rem;
+    --radius-lg: 1rem;
+  }
+
+  .dark {
+    /* Dark Academic Theme */
+    --background: 230 25% 8%;
+    --foreground: 28 15% 92%;
+    --page-background: 230 20% 10%;
+    
+    --card: 230 20% 12%;
+    --card-foreground: 28 15% 92%;
+    --card-border: 230 15% 20%;
+    
+    --primary: 215 85% 55%;
+    --primary-foreground: 230 25% 8%;
+    --primary-muted: 215 25% 25%;
+    
+    --secondary: 25 20% 25%;
+    --secondary-foreground: 25 15% 85%;
+    
+    --heading: 28 20% 95%;
+    --subheading: 28 15% 85%;
+    --body-text: 28 10% 78%;
+    --muted-text: 28 8% 55%;
+    
+    --border: 230 15% 20%;
+    --border-subtle: 230 12% 16%;
+    --divider: 230 15% 25%;
+    
+    --code-bg: 230 20% 14%;
+    --code-border: 230 15% 22%;
+    --syntax-keyword: 250 80% 65%;
+    --syntax-string: 120 50% 55%;
+    --syntax-comment: 0 0% 60%;
+    
+    --intuition-bg: 45 30% 12%;
+    --intuition-border: 45 30% 25%;
+    --approach-bg: 200 25% 12%;
+    --approach-border: 200 30% 25%;
+    --example-bg: 280 20% 12%;
+    --example-border: 280 25% 25%;
+    --complexity-bg: 15 30% 12%;
+    --complexity-border: 15 30% 25%;
+    --revision-bg: 120 20% 12%;
+    --revision-border: 120 25% 25%;
+    
+    --shadow-soft: 0 2px 8px hsl(0 0% 0% / 0.3);
+    --shadow-content: 0 4px 16px hsl(0 0% 0% / 0.4);
+    --shadow-elevated: 0 8px 32px hsl(0 0% 0% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    line-height: 1.6;
+  }
+
+  /* Typography Hierarchy */
+  h1 {
+    @apply text-heading font-heading font-semibold tracking-tight;
+  }
+  
+  h2 {
+    @apply text-subheading font-heading font-medium tracking-tight;
+  }
+  
+  h3 {
+    @apply text-body-text font-heading font-medium;
+  }
+  
+  p {
+    @apply text-body-text leading-relaxed;
+  }
+  
+  .text-muted {
+    @apply text-muted-text;
+  }
+}
+
+@layer components {
+  /* Content Structure Components */
+  .content-section {
+    @apply bg-card border border-card-border rounded-lg p-6 shadow-soft;
+  }
+  
+  .content-box {
+    @apply rounded-lg p-3 border-l-4 mb-3;
+  }
+  
+  .intuition-box {
+    @apply content-box bg-intuition-bg border-l-intuition-border;
+  }
+  
+  .approach-box {
+    @apply content-box bg-approach-bg border-l-approach-border;
+  }
+  
+  .example-box {
+    @apply content-box bg-example-bg border-l-example-border;
+  }
+  
+  .complexity-box {
+    @apply content-box bg-complexity-bg border-l-complexity-border;
+  }
+  
+  .revision-box {
+    @apply content-box bg-revision-bg border-l-revision-border;
+  }
+  
+  .code-box {
+    @apply bg-code-bg border border-code-border rounded-lg p-3 font-mono text-sm overflow-x-auto;
+  }
+  
+  /* Reader Layout */
+  .reader-page {
+    @apply max-w-4xl mx-auto bg-page-background shadow-content rounded-lg;
+    min-height: auto; /* Remove fixed A4 height for more compact layout */
+  }
+  
+  .two-column-layout {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-4;
+  }
+  
+  /* Print Optimizations */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    
+    .reader-page {
+      box-shadow: none;
+      margin: 0;
+      max-width: none;
+      background: white;
+    }
+    
+    .content-section,
+    .content-box,
+    .code-box {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    
+    h1, h2, h3 {
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
